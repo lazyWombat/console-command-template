@@ -1,0 +1,79 @@
+{
+    "$schema": "http://json.schemastore.org/template",
+    "author": "Demid Sukhovsky",
+    "name": "Console Application with commands",
+    "generatorVersions": "[1.0.0.0-*)",
+    "description": "A project for creating a command-line application with commands, logging, configuration and dependency injection",
+    "classifications": [
+        "Console",
+        "Boilerplate",
+        "Dependency Injection",
+        "Logging",
+        "Configuration",
+        "Commands"
+    ],
+    "tags": {
+        "language": "C#",
+        "type": "project"
+    },
+    "identity": "lazyWombat.Console.Commands",
+    "shortName": "console-commands",
+    "sourceName": "Company.ConsoleApplication1",
+    "preferNameDirectory": true,
+    "symbols": {
+        "TargetFrameworkOverride": {
+            "type": "parameter",
+            "description": "Overrides the target framework",
+            "replaces": "TargetFrameworkOverride",
+            "datatype": "string",
+            "defaultValue": ""
+        },
+        "Framework": {
+            "type": "parameter",
+            "description": "The target framework for the project.",
+            "datatype": "choice",
+            "choices": [
+                {
+                    "choice": "netcoreapp2.0",
+                    "description": "Target netcoreapp2.0"
+                }
+            ],
+            "replaces": "netcoreapp2.0",
+            "defaultValue": "netcoreapp2.0"
+        },
+        "skipRestore": {
+            "type": "parameter",
+            "datatype": "bool",
+            "description": "If specified, skips the automatic restore of the project on create.",
+            "defaultValue": "false"
+        },
+        "ApplicationFullName": {
+            "type": "parameter",
+            "description": "Application Full Name",
+            "datatype": "string",
+            "replaces": "APPLICATION-FULL-NAME",
+            "defaultValue": "Command Line Interface"
+        },
+        "ApplicationDescription": {
+            "type": "parameter",
+            "description": "Application Description",
+            "datatype": "string",
+            "replaces": "APPLICATION-DESCRIPTION",
+            "defaultValue": ""
+        }
+    },
+    "defaultName": "ConsoleApp1",
+    "postActions": [
+        {
+            "condition": "(!skipRestore)",
+            "description": "Restore NuGet packages required by this project.",
+            "manualInstructions": [
+                {
+                    "text": "Run 'dotnet restore'"
+                }
+            ],
+            "actionId": "210D431B-A78B-4D2F-B762-4ED3E3EA9025",
+            "continueOnError": true
+        }
+    ]
+}

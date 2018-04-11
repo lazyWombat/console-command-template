@@ -1,0 +1,29 @@
+<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup Label="PackageConfiguration">
+        <TargetFramework>netstandard1.0</TargetFramework>
+        <PackageType>Template</PackageType>
+        <PackageVersion>1.0.0</PackageVersion>
+        <Authors>Demid Sukhovsky</Authors>
+        <Description>.NET Template for a console application with commands</Description>
+        <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+        <PackageProjectUrl>https://github.com/lazyWombat/console-command-template</PackageProjectUrl>
+        <RepositoryUrl>https://github.com/lazyWombat/console-command-template</RepositoryUrl>
+        <PackageLicenseUrl>https://github.com/lazyWombat/console-command-template/blob/master/LICENSE</PackageLicenseUrl>
+        <Copyright>2018</Copyright>
+        <PackageTags>dotnet core console</PackageTags>
+        <ExcludeFromPackage>
+            **/bin/**;
+            **/obj/**
+        </ExcludeFromPackage>
+    </PropertyGroup>
+    <PropertyGroup Label="BuildConfiguration">
+        <NoBuild>True</NoBuild>
+        <IncludeBuildOutput>False</IncludeBuildOutput>
+        <GenerateAssemblyInfo>False</GenerateAssemblyInfo>
+        <DisableImplicitFrameworkReferences>True</DisableImplicitFrameworkReferences>
+        <PackProjectInputFile>$(MSBuildProjectFullPath)</PackProjectInputFile>
+    </PropertyGroup>
+    <ItemGroup>
+        <Content Include="content/**/*" Exclude="$(ExcludeFromPackage)" PackagePath="Content/" />
+    </ItemGroup>  
+</Project>
