@@ -10,7 +10,8 @@ dotnet new console-command -o MyAwesomeCLI
 
 ### Nuget
 
-The template can be installed by running the following command...
+The template is hosted at [nuget.org](https://www.nuget.org/packages/lazyWombat.Console.Commands.Template) and it can be installed by running the following command...
+
 ```
 dotnet new -i lazyWombat.Console.Commands.Template::*
 ```
